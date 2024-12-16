@@ -1,0 +1,10 @@
+Minimal project to test Orbit's dependencies with Conan 2 and CMake
+
+##Build
+
+```
+conan install . --build=missing
+cd build
+cmake -DCMAKE_TOOLCHAIN_FILE=generators/conan_toolchain.cmake ..
+cmake --build . --config Release
+```
