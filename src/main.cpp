@@ -63,8 +63,8 @@ int main() {
     std::cout << "GTest initialized." << std::endl;
 
     // Test Abseil linking
-    // std::string joined = absl::StrJoin(std::vector<std::string>{"Abseil", "Link", "Test"}, " ");
-    // std::cout << "Abseil string: " << joined << std::endl;
+    std::string joined = absl::StrJoin(std::vector<std::string>{"Abseil", "Link", "Test"}, " ");
+    std::cout << "Abseil string: " << joined << std::endl;
 
     // Test Capstone linking
     csh handle;
@@ -82,9 +82,9 @@ int main() {
     }
 
     // Test LLVM linking
-    // llvm::VersionTuple vt(1, 2, 3, 4);
-    // std::cout << "LLVM VersionTuple: " << vt.getMajor() << "." << vt.getMinor() 
-    //           << "." << vt.getSubminor() << "." << vt.getBuild() << std::endl;
+    llvm::VersionTuple vt(1, 2, 3, 4);
+    std::cout << "LLVM VersionTuple: " << vt.getMajor() << "." << *vt.getMinor() 
+              << "." << *vt.getSubminor() << "." << *vt.getBuild() << std::endl;
 
     // Test libssh2 linking
     if (libssh2_init(0) == 0) {

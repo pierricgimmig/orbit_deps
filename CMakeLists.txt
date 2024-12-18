@@ -23,13 +23,9 @@ endif()
 add_executable(my_project src/main.cpp)
 target_link_libraries(my_project PRIVATE
     abseil::abseil
-    absl::base
-    absl::time
-    absl::flat_hash_set
-    absl::strings
     capstone::capstone
-    gRPC::grpc
-    gtest::gtest
+    gRPC::grpc++
+    GTest::gtest
     outcome::outcome
     llvm-core::llvm-core
     ZLIB::ZLIB

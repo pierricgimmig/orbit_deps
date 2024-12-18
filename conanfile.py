@@ -9,8 +9,8 @@ class OrbitDeps(ConanFile):
     def requirements(self):
         self.requires("abseil/20240116.2")
         self.requires("capstone/5.0.1")
-        self.requires("grpc/1.65.0")
-        self.requires("gtest/1.15.0")
+        self.requires("grpc/1.67.1")
+        #self.requires("gtest/1.15.0")
         self.requires("outcome/2.2.9")
         self.requires("llvm-core/13.0.0")
         if self.settings.os != "Windows":
@@ -22,7 +22,7 @@ class OrbitDeps(ConanFile):
         self.requires("libssh2/1.11.0")
 
     def build_requirements(self):
-        self.tool_requires("grpc/1.65.0")
+        #self.tool_requires("grpc/1.67.1")
         self.tool_requires("protobuf/5.27.0")
         self.tool_requires("gtest/1.15.0")
 
