@@ -10,7 +10,7 @@ class OrbitDeps(ConanFile):
         self.requires("abseil/20240116.2")
         self.requires("capstone/5.0.1")
         self.requires("grpc/1.67.1")
-        #self.requires("gtest/1.15.0")
+        self.requires("gtest/1.15.0")
         self.requires("outcome/2.2.9")
         self.requires("llvm-core/13.0.0")
         if self.settings.os != "Windows":
