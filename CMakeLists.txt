@@ -6,15 +6,15 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 find_package(absl REQUIRED)
 find_package(capstone REQUIRED)
-find_package(grpc REQUIRED)
-find_package(gtest REQUIRED)
+find_package(gRPC REQUIRED)
+find_package(GTest REQUIRED)
 find_package(outcome REQUIRED)
 find_package(LLVM REQUIRED)
-find_package(zlib REQUIRED)
-find_package(openssl REQUIRED)
-find_package(libssh2 REQUIRED)
+find_package(ZLIB REQUIRED)
+find_package(OpenSSL REQUIRED)
+find_package(Libssh2 REQUIRED)
 
-if (NOT WIN32)
+if (WITH_VULKAN_DEPS)
     find_package(volk REQUIRED)
     find_package(vulkan-headers REQUIRED)
     find_package(vulkan-validationlayers REQUIRED)
@@ -34,7 +34,7 @@ target_link_libraries(my_project PRIVATE
     Libssh2::libssh2
 )
 
-if (NOT WIN32)
+if (WITH_VULKAN_DEPS)
     target_link_libraries(my_project PRIVATE
         volk::volk
         vulkan-headers::vulkan_headers

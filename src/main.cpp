@@ -39,7 +39,7 @@ namespace outcome = OUTCOME_V2_NAMESPACE;
 #include <absl/strings/str_format.h>
 
 
-#ifndef _WIN32
+#if WITH_VULKAN_DEPS
 #include <vulkan/vulkan.h>
 #include <volk.h>
 #endif
@@ -103,7 +103,7 @@ int main() {
         std::cout << "zlib deflateInit failed." << std::endl;
     }
 
-#ifndef _WIN32
+#if WITH_VULKAN_DEPS
     // Test Volk (Vulkan) linking
     if (volkInitialize() == VK_SUCCESS) {
         std::cout << "Volk initialized successfully." << std::endl;
